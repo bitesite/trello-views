@@ -1,0 +1,57 @@
+.btn {
+  border: none;
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+
+  background-color: #555;
+  color: white;
+}
+
+.btn.btn-success {
+  background-color: green;
+  color: white;
+}
+
+.btn.btn-danger {
+  background-color: red;
+  color: white;
+}
+
+table.views-table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+table.views-table .name-col {
+  width: 200px;
+}
+
+table.views-table .active-columns-col {
+  width: calc(100% - 300px);
+}
+
+table.views-table .actions-col {
+  width: 100px;
+}
+
+table.views-table input {
+  width: calc(100% - 10px);
+}
+
+table.views-table textarea {
+  width: calc(100% - 10px);
+  height: 75px;
+}
+
+table.views-table th, table.views-table td {
+  vertical-align: top;
+  border: 1px solid #ddd;
+  padding: 5px;
+}
+
+.save-container {
+  margin: 10px 0;
+}

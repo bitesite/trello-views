@@ -1,13 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="button.css">
+    <link rel="stylesheet" href="options.css">
   </head>
   <body>
-    <div id="buttonDiv">
-    </div>
-    <div>
-      <p>Coming soon</p>
+    <h1>Trello Views</h1>
+    <table class='views-table'>
+      <thead>
+        <tr>
+          <th class='name-col'>Name</th>
+          <th class='active-columns-col'>Active Columns (comma-separated, case-insensitive)</th>
+          <th class='actions-col'></th>
+        </tr>
+      </thead>
+      <tbody id='views-table-body'>
+      </tbody>
+    </table>
+    <button id='add-new-view' class='btn'>Add View</button>
+    <div class='save-container'>
+      <button id='save' class='btn btn-success'>Save</button>
     </div>
   </body>
   <script src="options.js"></script>
