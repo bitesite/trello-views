@@ -18,7 +18,6 @@ function buildButton(view) {
   selectViewButton.textContent = view.name;
   selectViewButton.addEventListener('click', async () => {
     const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-
     const data = {
       allColumns: false,
       activeColumns: view.activeColumns,

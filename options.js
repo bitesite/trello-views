@@ -61,7 +61,9 @@ saveButton.addEventListener('click', () => {
 
     views.push({ name, activeColumns });
   });
-  chrome.storage.local.set({ views });
+  chrome.storage.local.set({ views }, () => {
+    alert("All changes saved.");
+  });
 });
 
 loadViews();
