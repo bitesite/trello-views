@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "manifest_version": 3,
   "options_page": "options.html",
-  "permissions": ["storage", "activeTab", "scripting"],
+  "permissions": ["storage"],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
