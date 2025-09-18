@@ -33,7 +33,8 @@ function buildTableRow(nameValue, activeColumnsValue) {
 
 function loadViews() {
   chrome.storage.local.get("views", (result) => {
-    result.views.forEach((view) => {
+    const views = Array.isArray(result.views) ? result.views : [];
+    views.forEach((view) => {
       buildTableRow(view.name, view.activeColumns);
     });
   });

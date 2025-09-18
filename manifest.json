@@ -3,6 +3,9 @@
   "description": "Tailored views of your boards!",
   "version": "0.0.1",
   "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
   "options_page": "options.html",
   "permissions": ["storage"],
   "action": {
