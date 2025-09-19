@@ -1,0 +1,38 @@
+name: Package Extension
+
+on:
+  push:
+    branches:
+      - master
+  release:
+    types: [published]
+
+jobs:
+  build-and-attach:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Create extension archive
+        run: |
+          zip -r trello-views-extension.zip . \
+            -x ".git/*" \
+            -x ".github/*" \
+            -x "trello-views-extension.zip"
+
+      - name: Upload workflow artifact
+        if: github.event_name != 'release'
+        uses: actions/upload-artifact@v4
+        with:
+          name: trello-views-extension
+          path: trello-views-extension.zip
+
+      - name: Upload release asset
+        if: github.event_name == 'release'
+        uses: svenstaro/upload-release-action@v2
+        with:
+          file: trello-views-extension.zip
+          asset_name: trello-views-extension.zip
+          tag: ${{ github.ref_name }}
+          overwrite: true

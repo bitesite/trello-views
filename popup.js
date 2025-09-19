@@ -31,7 +31,8 @@ function buildButton(view) {
 
 function loadViews() {
   chrome.storage.local.get("views", (result) => {
-    result.views.forEach((view) => {
+    const views = Array.isArray(result.views) ? result.views : [];
+    views.forEach((view) => {
       buildButton(view);
     });
   });
